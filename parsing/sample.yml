@@ -1,0 +1,23 @@
+---
+  - hosts: all
+    name: first play
+    tasks:
+    - name: task one
+      yum: name=httpd state=started
+
+    - name: task two
+      yum: name=httpd state=started
+      changed_when: false
+
+    - name: task three
+      yum: name=httpd state=started
+      changed_when: group is web
+
+  - hosts: all
+    name: second play
+    tasks:
+    - name: task one
+      yum: name=httpd state=started
+
+    - name: task two
+      yum: name=httpd state=started
