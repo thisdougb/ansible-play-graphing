@@ -1,2 +1,2 @@
 # ansible-play-graphing
-Making graphs from Ansible plays, researching potential for a complexity value
+A little area for research into creating a 'complexity' value for Ansible plays, in the McCabe sense.
