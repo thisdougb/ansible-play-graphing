@@ -6,32 +6,32 @@ $ python parse_play_file.py
 ['sample.yml']
 
 Parsed tasks.....
-first play TASK: task one 282381829 None
-first play TASK: task two 282394921 False
-first play TASK: task three 282391001 group is web
-second play TASK: task one 282395025 None
-second play TASK: task two 282395021 None
+first play TASK: task one 278644229  condition:  None
+first play TASK: task two 278657065  condition:  False
+first play TASK: task three 278653401  condition:  group is web
+second play TASK: task one 278657169  condition:  None
+second play TASK: task two 278657165  condition:  None
 
 Built graph.....
 {
-    "282395025": [
-        282395021
+    "278657169": [
+        278657165
     ], 
-    "282381829": [
-        282394921, 
-        282391001
+    "278644229": [
+        278657065, 
+        278653401
     ], 
-    "282394921": [
-        282391001, 
-        282395025
+    "278657065": [
+        278653401, 
+        278657169
     ], 
-    "282391001": [
-        282395025
+    "278653401": [
+        278657169
     ]
 }
 
 Found paths.....
-path:  [282381829, 282394921, 282391001, 282395025, 282395021]
-path:  [282381829, 282394921, 282395025, 282395021]
-path:  [282381829, 282391001, 282395025, 282395021]
+path:  [278644229, 278657065, 278653401, 278657169, 278657165]
+path:  [278644229, 278657065, 278657169, 278657165]
+path:  [278644229, 278653401, 278657169, 278657165]
 ```
