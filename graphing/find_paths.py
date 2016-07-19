@@ -9,6 +9,8 @@
 # (four)  task: restart httpd
 #
 
+import json
+
 graph = { 'one': ['two'],
           'two': ['three', 'four'],
           'three': ['four']}
@@ -33,5 +35,9 @@ def discover_paths(graph, start, end, path=[]):
 
     return paths
 
+print "Graph:"
+print json.dumps(graph, indent=4)
 
-print discover_paths(graph, 'one', 'four')
+print "Paths:"
+# print the discovered paths
+print json.dumps(discover_paths(graph, 'one', 'four'), indent=4)
