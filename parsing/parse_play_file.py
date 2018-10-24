@@ -9,12 +9,12 @@ import json
 from collections import namedtuple
 
 from ansible.parsing.dataloader import DataLoader
-from ansible.vars import VariableManager
-from ansible.inventory import Inventory
+from ansible.vars.manager import VariableManager
+from ansible.inventory.manager import InventoryManager
 from ansible.executor.playbook_executor import PlaybookExecutor
 from ansible.playbook import Playbook
 from ansible.playbook.task import Task
-from ansible.utils.unicode import to_unicode
+from ansible.utils.unicode import to_text
 
 try:
     from __main__ import display
@@ -25,7 +25,8 @@ display = Display()
 variable_manager = VariableManager()
 loader = DataLoader()
 
-inventory = Inventory(loader=loader, variable_manager=variable_manager,  host_list='./sample_hosts')
+#inventory = InventoryManager(loader=loader, variable_manager=variable_manager,  sources='./sample_hosts')
+inventory = InventoryManager(loader=loader, sources='./sample_hosts')
 playbook_path = 'sample.yml'
 
 if not os.path.exists(playbook_path):
